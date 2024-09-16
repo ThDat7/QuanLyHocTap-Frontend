@@ -15,6 +15,7 @@ import TimeTableSemester from './components/student/TimeTableSemester'
 import SearchResult from './components/educationProgram/SearchResult'
 import EducationPrograms from './components/educationProgram/EducationPrograms'
 import { default as TeacherTimeTable } from './components/teacher/Timetable'
+import { default as TeacherExamSchedule } from './components/teacher/ExamSchedule'
 import News, { NewsView } from './components/News'
 import StudentStatus from './components/student/StudentStatus'
 import Invoice from './components/student/Tution'
@@ -62,6 +63,10 @@ const App = () => {
                   element={<TeacherTimeTable />}
                 />
                 <Route path={Urls['invoice']} element={<Invoice />} />
+                <Route
+                  path={Urls['teacherExamSchedule']}
+                  element={<TeacherExamSchedule />}
+                />
               </Routes>
             </Col>
 

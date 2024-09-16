@@ -20,6 +20,7 @@ const StudentFeatures = () => {
 const TeacherFeatures = () => {
   const features = [
     { label: 'Thời khóa biểu giảng dạy', url: Urls['teacherTimeTable'] },
+    { label: 'Quản lý lịch thi', url: Urls['teacherExamSchedule'] },
   ]
 
   return <Features features={features} />

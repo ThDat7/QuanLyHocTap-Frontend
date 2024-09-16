@@ -13,6 +13,7 @@ const Urls = {
   invoice: '/invoice',
 
   teacherTimeTable: '/teacher/timetable',
+  teacherExamSchedule: '/teacher/exam-schedule',
 }
 
 export default Urls

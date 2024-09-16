@@ -26,8 +26,15 @@ export const endpoints = {
     `/api/invoices/semester/${semesterId}/current-student`,
 
   teacherAllSemester: '/api/semesters/current-teacher',
+  semesterNoneLocked: '/api/semesters/none-locked',
   teacherTimetableBySemester: (semesterId) =>
     `/api/timetables/semester/${semesterId}/current-teacher`,
+  teacherExamScheduleBySemester: (semesterId) =>
+    `/api/exam-schedules/semester/${semesterId}/current-teacher`,
+  teacherAvailableDateMidtermExam: (courseClassId) =>
+    `/api/exam-schedules/course-class/${courseClassId}/available-date-midterm-exam`,
+  teacherUpdateMidtermExam: (courseClassId) =>
+    `/api/exam-schedules/course-class/${courseClassId}/midterm-exam/current-teacher`,
 }
 
 export default axios.create({

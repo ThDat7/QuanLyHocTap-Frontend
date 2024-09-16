@@ -9,6 +9,7 @@ const StudentFeatures = () => {
     { label: 'Xem học phí', url: Urls['invoice'] },
     { label: 'Xem thời khóa biểu tuần', url: Urls['timetable'] },
     { label: 'Xem thời khóa biểu học kỳ', url: Urls['timetableSemester'] },
+    { label: 'Xem lịch thi', url: Urls['examSchedule'] },
   ]
 
   return <Features features={features} />

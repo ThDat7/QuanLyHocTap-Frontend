@@ -9,6 +9,8 @@ export const endpoints = {
   studentAllSemester: '/api/semesters/current-student',
   studentTimetableBySemester: (semesterId) =>
     `/api/timetables/semester/${semesterId}/current-student`,
+  examScheduleBySemester: (semesterId) =>
+    `/api/exam-schedules/semester/${semesterId}/current-student`,
   courseRegisterInfo: '/api/course-registers/by-current-education-program',
   registerCourse: (courseClassId) =>
     `/api/course-registers/register-course/${courseClassId}`,

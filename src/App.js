@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Col, Container, Row } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from './layout/Footer'
+import Header from './layout/Header'
+import Sidebar from './layout/Sidebar'
+import Urls from './configs/Urls'
+import Forbidden from './components/Forbidden'
+import News, { NewsView } from './components/News'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <BrowserRouter>
+        <Header />
+        <Container fluid className='full-width-height'>
+          <Row>
+            <Col md={8}>
+              <Routes>
+                <Route path={Urls['forbidden']} element={<Forbidden />} />
+                <Route path={Urls['home']} element={<News />} />{' '}
+                <Route path={`${Urls['newsView']}:id`} element={<NewsView />} />
+              </Routes>
+            </Col>
+
+            <Col md={4}>
+              <Sidebar />
+            </Col>
+          </Row>
+        </Container>
+        <Footer />
+      </BrowserRouter>
+    </>
+  )
 }
 
-export default App;
+export default App

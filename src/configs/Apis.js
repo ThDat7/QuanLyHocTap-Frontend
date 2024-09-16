@@ -6,6 +6,7 @@ const SERVER_PORT = '80'
 const SERVER_HOST = 'localhost'
 
 export const endpoints = {
+  studentAllSemester: '/api/semesters/current-student',
   courseRegisterInfo: '/api/course-registers/by-current-education-program',
   registerCourse: (courseClassId) =>
     `/api/course-registers/register-course/${courseClassId}`,
@@ -13,6 +14,8 @@ export const endpoints = {
     `/api/course-registers/unregister-course/${courseClassId}`,
   allNews: '/api/news',
   newsView: (newsId) => `/api/news/view/${newsId}`,
+  invoiceBySemester: (semesterId) =>
+    `/api/invoices/semester/${semesterId}/current-student`,
 }
 
 export default axios.create({

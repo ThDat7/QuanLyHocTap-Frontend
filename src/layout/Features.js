@@ -6,6 +6,7 @@ import Urls from '../configs/Urls'
 const StudentFeatures = () => {
   const features = [
     { label: 'Đăng ký môn học', url: Urls['courseRegistration'] },
+    { label: 'Xem học phí', url: Urls['invoice'] },
   ]
 
   return <Features features={features} />

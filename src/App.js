@@ -9,6 +9,7 @@ import Urls from './configs/Urls'
 import Forbidden from './components/Forbidden'
 import CourseRegistration from './components/student/CourseRegistration'
 import News, { NewsView } from './components/News'
+import Invoice from './components/student/Tution'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
                   path={Urls['courseRegistration']}
                   element={<CourseRegistration />}
                 />
+                <Route path={Urls['invoice']} element={<Invoice />} />
               </Routes>
             </Col>
 

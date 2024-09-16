@@ -7,7 +7,9 @@ import Header from './layout/Header'
 import Sidebar from './layout/Sidebar'
 import Urls from './configs/Urls'
 import Forbidden from './components/Forbidden'
+import StudentTimetable from './components/student/Timetable'
 import CourseRegistration from './components/student/CourseRegistration'
+import TimeTableSemester from './components/student/TimeTableSemester'
 import News, { NewsView } from './components/News'
 import Invoice from './components/student/Tution'
 
@@ -23,6 +25,14 @@ const App = () => {
                 <Route path={Urls['forbidden']} element={<Forbidden />} />
                 <Route path={Urls['home']} element={<News />} />
                 <Route path={`${Urls['newsView']}:id`} element={<NewsView />} />
+                <Route
+                  path={Urls['timetableSemester']}
+                  element={<TimeTableSemester />}
+                />
+                <Route
+                  path={Urls['timetable']}
+                  element={<StudentTimetable />}
+                />
                 <Route
                   path={Urls['courseRegistration']}
                   element={<CourseRegistration />}

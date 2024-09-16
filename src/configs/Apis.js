@@ -19,6 +19,7 @@ export const endpoints = {
     `/api/course-registers/unregister-course/${courseClassId}`,
   allNews: '/api/news',
   newsView: (newsId) => `/api/news/view/${newsId}`,
+  currentStudentStatus: '/api/student-status/current-student',
   invoiceBySemester: (semesterId) =>
     `/api/invoices/semester/${semesterId}/current-student`,
 }

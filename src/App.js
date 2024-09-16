@@ -13,6 +13,7 @@ import StudentTimetable from './components/student/Timetable'
 import CourseRegistration from './components/student/CourseRegistration'
 import TimeTableSemester from './components/student/TimeTableSemester'
 import News, { NewsView } from './components/News'
+import StudentStatus from './components/student/StudentStatus'
 import Invoice from './components/student/Tution'
 
 const App = () => {
@@ -40,6 +41,10 @@ const App = () => {
                 <Route
                   path={Urls['courseRegistration']}
                   element={<CourseRegistration />}
+                />
+                <Route
+                  path={Urls['studentStatus']}
+                  element={<StudentStatus />}
                 />
                 <Route path={Urls['invoice']} element={<Invoice />} />
               </Routes>

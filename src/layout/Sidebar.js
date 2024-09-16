@@ -1,13 +1,12 @@
-import {
-  StudentFeatures,
-} from './Features'
+import { StudentFeatures, TeacherFeatures } from './Features'
 import UserInfo from '../components/UserInfo'
 
 const Sidebar = () => {
   return (
     <>
       <UserInfo />
-      <StudentFeatures />
+      <TeacherFeatures />
+      {/* <StudentFeatures /> */}
     </>
   )
 }

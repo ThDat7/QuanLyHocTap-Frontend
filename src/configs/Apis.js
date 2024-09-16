@@ -24,6 +24,10 @@ export const endpoints = {
   currentStudentStatus: '/api/student-status/current-student',
   invoiceBySemester: (semesterId) =>
     `/api/invoices/semester/${semesterId}/current-student`,
+
+  teacherAllSemester: '/api/semesters/current-teacher',
+  teacherTimetableBySemester: (semesterId) =>
+    `/api/timetables/semester/${semesterId}/current-teacher`,
 }
 
 export default axios.create({

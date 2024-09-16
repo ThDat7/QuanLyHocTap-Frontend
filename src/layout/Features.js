@@ -17,6 +17,14 @@ const StudentFeatures = () => {
   return <Features features={features} />
 }
 
+const TeacherFeatures = () => {
+  const features = [
+    { label: 'Thời khóa biểu giảng dạy', url: Urls['teacherTimeTable'] },
+  ]
+
+  return <Features features={features} />
+}
+
 const Features = ({ features }) => {
   return (
     <Card className='mb-3'>
@@ -36,4 +44,4 @@ const Features = ({ features }) => {
   )
 }
 
-export { StudentFeatures }
+export { StudentFeatures, TeacherFeatures }

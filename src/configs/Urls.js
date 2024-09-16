@@ -11,6 +11,8 @@ const Urls = {
   educationProgramView: '/education-programs/view/',
   studentStatus: '/studentstatus',
   invoice: '/invoice',
+
+  teacherTimeTable: '/teacher/timetable',
 }
 
 export default Urls

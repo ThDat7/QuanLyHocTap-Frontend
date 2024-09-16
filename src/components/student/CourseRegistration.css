@@ -1,0 +1,28 @@
+h5 {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+thead th {
+  background-color: #007bff;
+  color: white;
+}
+
+tbody td {
+  vertical-align: middle;
+}
+
+button {
+  margin: 5px;
+}
+
+th {
+  background-color: #07689f !important;
+  text-align: center;
+  color: white !important;
+}

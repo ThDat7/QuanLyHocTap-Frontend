@@ -7,6 +7,7 @@ import Header from './layout/Header'
 import Sidebar from './layout/Sidebar'
 import Urls from './configs/Urls'
 import Forbidden from './components/Forbidden'
+import CourseRegistration from './components/student/CourseRegistration'
 import News, { NewsView } from './components/News'
 
 const App = () => {
@@ -19,8 +20,12 @@ const App = () => {
             <Col md={8}>
               <Routes>
                 <Route path={Urls['forbidden']} element={<Forbidden />} />
-                <Route path={Urls['home']} element={<News />} />{' '}
+                <Route path={Urls['home']} element={<News />} />
                 <Route path={`${Urls['newsView']}:id`} element={<NewsView />} />
+                <Route
+                  path={Urls['courseRegistration']}
+                  element={<CourseRegistration />}
+                />
               </Routes>
             </Col>
 

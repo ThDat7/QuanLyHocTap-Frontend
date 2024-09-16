@@ -15,6 +15,8 @@ const Urls = {
   teacherTimeTable: '/teacher/timetable',
   teacherExamSchedule: '/teacher/exam-schedule',
   teacherScore: '/teacher/score',
+  teacherCourseOutlines: '/teacher/course-outlines/',
+  teacherCourseOutlineView: '/teacher/course-outline-view/',
 }
 
 export default Urls

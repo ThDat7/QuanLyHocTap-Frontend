@@ -40,6 +40,11 @@ export const endpoints = {
   teacherScoreByCourseClass: (courseClassId) =>
     `/api/scores/course-class/${courseClassId}/current-teacher`,
   teacherUpdateScore: '/api/scores/update/current-teacher',
+  teacherCourseOutlines: `/api/course-outlines/current-teacher`,
+  teacherCourseOutlineView: (id) =>
+    `/api/course-outlines/${id}/current-teacher`,
+  teacherUpdateCourseOutline: (id) =>
+    `/api/course-outlines/${id}/current-teacher`,
 }
 
 export default axios.create({

@@ -20,6 +20,8 @@ import News, { NewsView } from './components/News'
 import StudentStatus from './components/student/StudentStatus'
 import Invoice from './components/student/Tution'
 import Score from './components/teacher/Score'
+import CourseOutlines from './components/teacher/CourseOutline'
+import CourseOutlineEdit from './components/teacher/CourseOutlineEdit'
 
 const App = () => {
   return (
@@ -69,6 +71,14 @@ const App = () => {
                   element={<TeacherExamSchedule />}
                 />
                 <Route path={Urls['teacherScore']} element={<Score />} />
+                <Route
+                  path={Urls['teacherCourseOutlines']}
+                  element={<CourseOutlines />}
+                />
+                <Route
+                  path={`${Urls['teacherCourseOutlineView']}:id`}
+                  element={<CourseOutlineEdit />}
+                />
               </Routes>
             </Col>
 

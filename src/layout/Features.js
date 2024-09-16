@@ -22,6 +22,7 @@ const TeacherFeatures = () => {
     { label: 'Thời khóa biểu giảng dạy', url: Urls['teacherTimeTable'] },
     { label: 'Quản lý lịch thi', url: Urls['teacherExamSchedule'] },
     { label: 'Quản lý điểm', url: Urls['teacherScore'] },
+    { label: 'Quản lý đề cương', url: Urls['teacherCourseOutlines'] },
   ]
 
   return <Features features={features} />

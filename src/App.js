@@ -12,6 +12,8 @@ import StudyResult from './components/student/StudyResult'
 import StudentTimetable from './components/student/Timetable'
 import CourseRegistration from './components/student/CourseRegistration'
 import TimeTableSemester from './components/student/TimeTableSemester'
+import SearchResult from './components/educationProgram/SearchResult'
+import EducationPrograms from './components/educationProgram/EducationPrograms'
 import News, { NewsView } from './components/News'
 import StudentStatus from './components/student/StudentStatus'
 import Invoice from './components/student/Tution'
@@ -41,6 +43,14 @@ const App = () => {
                 <Route
                   path={Urls['courseRegistration']}
                   element={<CourseRegistration />}
+                />
+                <Route
+                  path={Urls['searchEducationProgram']}
+                  element={<SearchResult />}
+                />
+                <Route
+                  path={`${Urls['educationProgramView']}:id`}
+                  element={<EducationPrograms />}
                 />
                 <Route
                   path={Urls['studentStatus']}

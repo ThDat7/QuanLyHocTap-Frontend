@@ -7,6 +7,8 @@ const Urls = {
   timetable: '/timetable',
   timetableSemester: '/timetable-semester',
   courseRegistration: '/course-registration',
+  searchEducationProgram: '/search-education-program',
+  educationProgramView: '/education-programs/view/',
   studentStatus: '/studentstatus',
   invoice: '/invoice',
 }

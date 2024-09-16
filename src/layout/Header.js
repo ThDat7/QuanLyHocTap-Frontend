@@ -4,7 +4,10 @@ import Urls from '../configs/Urls'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
-  const navLinks = [{ label: 'Trang chủ', url: '#home' }]
+  const navLinks = [
+    { label: 'Trang chủ', url: '#home' },
+    { label: 'Chương trình đào tạo', url: Urls['searchEducationProgram'] },
+  ]
 
   return (
     <Navbar bg='primary' variant='dark' className='mb-3'>

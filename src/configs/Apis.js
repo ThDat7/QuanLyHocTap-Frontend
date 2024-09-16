@@ -17,6 +17,8 @@ export const endpoints = {
     `/api/course-registers/register-course/${courseClassId}`,
   unRegisterCourse: (courseClassId) =>
     `/api/course-registers/unregister-course/${courseClassId}`,
+  searchEducationProgram: '/api/education-programs/search',
+  'education-program-view': (id) => `/api/education-programs/view/${id}`,
   allNews: '/api/news',
   newsView: (newsId) => `/api/news/view/${newsId}`,
   currentStudentStatus: '/api/student-status/current-student',

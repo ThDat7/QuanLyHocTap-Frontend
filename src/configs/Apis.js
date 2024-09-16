@@ -35,6 +35,11 @@ export const endpoints = {
     `/api/exam-schedules/course-class/${courseClassId}/available-date-midterm-exam`,
   teacherUpdateMidtermExam: (courseClassId) =>
     `/api/exam-schedules/course-class/${courseClassId}/midterm-exam/current-teacher`,
+  teacherCourseClassTeaching: (semesterId) =>
+    `/api/course-classes/semester/${semesterId}/current-teacher-teaching`,
+  teacherScoreByCourseClass: (courseClassId) =>
+    `/api/scores/course-class/${courseClassId}/current-teacher`,
+  teacherUpdateScore: '/api/scores/update/current-teacher',
 }
 
 export default axios.create({

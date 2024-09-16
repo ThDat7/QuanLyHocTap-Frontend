@@ -19,6 +19,7 @@ import { default as TeacherExamSchedule } from './components/teacher/ExamSchedul
 import News, { NewsView } from './components/News'
 import StudentStatus from './components/student/StudentStatus'
 import Invoice from './components/student/Tution'
+import Score from './components/teacher/Score'
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
                   path={Urls['teacherExamSchedule']}
                   element={<TeacherExamSchedule />}
                 />
+                <Route path={Urls['teacherScore']} element={<Score />} />
               </Routes>
             </Col>
 

@@ -21,6 +21,7 @@ const Urls = {
   adminMajor: '/admin/majors/',
   adminCourse: '/admin/courses/',
   adminFaculty: '/admin/faculties/',
+  adminSetting: '/admin/settings/',
   adminNews: '/admin/news/',
 }
 

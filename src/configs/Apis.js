@@ -57,6 +57,9 @@ export const endpoints = {
   faculties: '/api/faculties',
   faculty: (id) => `/api/faculties/${id}`,
 
+  settings: '/api/settings',
+  setting: (id) => `/api/settings/${id}`,
+
   newses: '/api/news',
   news: (id) => `/api/news/${id}`,
   staffSelectOption: `/api/staffs/select-options`,

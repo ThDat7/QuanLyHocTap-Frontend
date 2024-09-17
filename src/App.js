@@ -25,6 +25,7 @@ import CourseOutlineEdit from './components/teacher/CourseOutlineEdit'
 import Major, { MajorEdit } from './components/admin/Major'
 import Course, { CourseEdit } from './components/admin/Course'
 import Faculty, { FacultyEdit } from './components/admin/Faculty'
+import Setting, { SettingEdit } from './components/admin/Setting'
 import { NewsEdit } from './components/admin/News'
 import { default as AdminNews } from './components/admin/News'
 
@@ -111,6 +112,11 @@ const App = () => {
                 <Route
                   path={`${Urls['adminFaculty']}create`}
                   element={<FacultyEdit />}
+                />
+                <Route path={`${Urls['adminSetting']}`} element={<Setting />} />
+                <Route
+                  path={`${Urls['adminSetting']}:id`}
+                  element={<SettingEdit />}
                 />
                 <Route path={`${Urls['adminNews']}`} element={<AdminNews />} />
                 <Route

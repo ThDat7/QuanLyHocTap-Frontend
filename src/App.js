@@ -22,6 +22,7 @@ import Invoice from './components/student/Tution'
 import Score from './components/teacher/Score'
 import CourseOutlines from './components/teacher/CourseOutline'
 import CourseOutlineEdit from './components/teacher/CourseOutlineEdit'
+import Major, { MajorEdit } from './components/admin/Major'
 import Faculty, { FacultyEdit } from './components/admin/Faculty'
 import { NewsEdit } from './components/admin/News'
 import { default as AdminNews } from './components/admin/News'
@@ -83,6 +84,15 @@ const App = () => {
                   element={<CourseOutlineEdit />}
                 />
 
+                <Route path={`${Urls['adminMajor']}`} element={<Major />} />
+                <Route
+                  path={`${Urls['adminMajor']}:id`}
+                  element={<MajorEdit />}
+                />
+                <Route
+                  path={`${Urls['adminMajor']}create`}
+                  element={<MajorEdit />}
+                />
                 <Route path={`${Urls['adminFaculty']}`} element={<Faculty />} />
                 <Route
                   path={`${Urls['adminFaculty']}:id`}

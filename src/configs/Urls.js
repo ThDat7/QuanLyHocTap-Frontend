@@ -18,6 +18,7 @@ const Urls = {
   teacherCourseOutlines: '/teacher/course-outlines/',
   teacherCourseOutlineView: '/teacher/course-outline-view/',
 
+  adminMajor: '/admin/majors/',
   adminFaculty: '/admin/faculties/',
   adminNews: '/admin/news/',
 }

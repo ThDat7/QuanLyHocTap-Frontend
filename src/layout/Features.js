@@ -28,6 +28,12 @@ const TeacherFeatures = () => {
   return <Features features={features} />
 }
 
+const AdminFeatures = () => {
+  const features = [{ label: 'Thông báo', url: Urls['adminNews'] }]
+
+  return <Features features={features} />
+}
+
 const Features = ({ features }) => {
   return (
     <Card className='mb-3'>
@@ -47,4 +53,4 @@ const Features = ({ features }) => {
   )
 }
 
-export { StudentFeatures, TeacherFeatures }
+export { StudentFeatures, TeacherFeatures, AdminFeatures }

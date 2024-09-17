@@ -17,6 +17,8 @@ const Urls = {
   teacherScore: '/teacher/score',
   teacherCourseOutlines: '/teacher/course-outlines/',
   teacherCourseOutlineView: '/teacher/course-outline-view/',
+
+  adminNews: '/admin/news/',
 }
 
 export default Urls

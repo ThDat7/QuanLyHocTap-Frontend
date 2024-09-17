@@ -22,6 +22,8 @@ import Invoice from './components/student/Tution'
 import Score from './components/teacher/Score'
 import CourseOutlines from './components/teacher/CourseOutline'
 import CourseOutlineEdit from './components/teacher/CourseOutlineEdit'
+import { NewsEdit } from './components/admin/News'
+import { default as AdminNews } from './components/admin/News'
 
 const App = () => {
   return (
@@ -78,6 +80,16 @@ const App = () => {
                 <Route
                   path={`${Urls['teacherCourseOutlineView']}:id`}
                   element={<CourseOutlineEdit />}
+                />
+
+                <Route path={`${Urls['adminNews']}`} element={<AdminNews />} />
+                <Route
+                  path={`${Urls['adminNews']}:id`}
+                  element={<NewsEdit />}
+                />
+                <Route
+                  path={`${Urls['adminNews']}create`}
+                  element={<NewsEdit />}
                 />
               </Routes>
             </Col>

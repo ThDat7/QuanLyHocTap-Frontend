@@ -45,6 +45,10 @@ export const endpoints = {
     `/api/course-outlines/${id}/current-teacher`,
   teacherUpdateCourseOutline: (id) =>
     `/api/course-outlines/${id}/current-teacher`,
+
+  newses: '/api/news',
+  news: (id) => `/api/news/${id}`,
+  staffSelectOption: `/api/staffs/select-options`,
 }
 
 export default axios.create({

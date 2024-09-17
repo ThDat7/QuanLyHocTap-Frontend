@@ -50,6 +50,10 @@ export const endpoints = {
   major: (id) => `/api/majors/${id}`,
   facultiesSelectOptions: '/api/faculties/select-options',
 
+  courses: '/api/courses',
+  course: (id) => `/api/courses/${id}`,
+  courseTypes: '/api/courses/types',
+
   faculties: '/api/faculties',
   faculty: (id) => `/api/faculties/${id}`,
 

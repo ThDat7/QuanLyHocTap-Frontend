@@ -33,6 +33,7 @@ const AdminFeatures = () => {
     { label: 'Thông báo', url: Urls['adminNews'] },
     { label: 'Khoa', url: Urls['adminFaculty'] },
     { label: 'Ngành', url: Urls['adminMajor'] },
+    { label: 'Môn', url: Urls['adminCourse'] },
   ]
 
   return <Features features={features} />

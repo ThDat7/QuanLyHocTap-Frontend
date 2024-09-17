@@ -46,6 +46,9 @@ export const endpoints = {
   teacherUpdateCourseOutline: (id) =>
     `/api/course-outlines/${id}/current-teacher`,
 
+  faculties: '/api/faculties',
+  faculty: (id) => `/api/faculties/${id}`,
+
   newses: '/api/news',
   news: (id) => `/api/news/${id}`,
   staffSelectOption: `/api/staffs/select-options`,

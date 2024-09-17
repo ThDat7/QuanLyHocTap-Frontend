@@ -29,7 +29,10 @@ const TeacherFeatures = () => {
 }
 
 const AdminFeatures = () => {
-  const features = [{ label: 'Thông báo', url: Urls['adminNews'] }]
+  const features = [
+    { label: 'Thông báo', url: Urls['adminNews'] },
+    { label: 'Khoa', url: Urls['adminFaculty'] },
+  ]
 
   return <Features features={features} />
 }

@@ -60,6 +60,13 @@ export const endpoints = {
   settings: '/api/settings',
   setting: (id) => `/api/settings/${id}`,
 
+  educationPrograms: '/api/education-programs',
+  educationProgram: (id) => `/api/education-programs/${id}`,
+  coursesSelectOption: `/api/courses/select-options`,
+  majorsSelectOption: `/api/majors/select-options`,
+  cloneEducationProgram: (fromYear, toYear) =>
+    `/api/education-programs/clone-batching/fromYear/${fromYear}/toYear/${toYear}`,
+
   newses: '/api/news',
   news: (id) => `/api/news/${id}`,
   staffSelectOption: `/api/staffs/select-options`,

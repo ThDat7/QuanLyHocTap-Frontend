@@ -11,8 +11,8 @@ const Invoice = () => {
     const fetchSemesters = async () => {
       try {
         const response = await authApis.get(endpoints.studentAllSemester)
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -32,7 +32,7 @@ const Invoice = () => {
     try {
       const url = endpoints.invoiceBySemester(semesterSelected.id)
       const response = await authApis.get(url)
-      setInvoices(response.data)
+      setInvoices(response.data.result)
     } catch (error) {
       console.error(error)
     }

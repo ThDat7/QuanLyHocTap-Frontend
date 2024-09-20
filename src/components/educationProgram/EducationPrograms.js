@@ -31,7 +31,7 @@ const EducationPrograms = () => {
     const fetchEducationProgram = async () => {
       try {
         const res = await authApis.get(endpoints['education-program-view'](id))
-        setEducationProgram(res.data)
+        setEducationProgram(res.data.result)
       } catch (e) {
         console.error(e)
       }

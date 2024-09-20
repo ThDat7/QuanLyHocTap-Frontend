@@ -20,8 +20,8 @@ const CourseOutline = () => {
         const res = await authApis.get(
           `${endpoints['teacherCourseOutlines']}?page=${currentPage}`
         )
-        setTotal(res.data.total)
-        setCourseOutlines(res.data.data)
+        setTotal(res.data.result.total)
+        setCourseOutlines(res.data.result.data)
       } catch (e) {
         console.error(e)
       }

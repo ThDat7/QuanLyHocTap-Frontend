@@ -15,8 +15,8 @@ const Score = () => {
     const fetchSemesters = async () => {
       try {
         const response = await authApis.get(endpoints.semesterNoneLocked)
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -44,8 +44,8 @@ const Score = () => {
     try {
       const url = endpoints.teacherCourseClassTeaching(semesterSelected.id)
       const response = await authApis.get(url)
-      setCourseClasses(response.data)
-      setCourseClassSelected(response.data[0])
+      setCourseClasses(response.data.result)
+      setCourseClassSelected(response.data.result[0])
     } catch (error) {
       console.error(error)
     }
@@ -61,7 +61,7 @@ const Score = () => {
       const response = await authApis.get(
         endpoints.teacherScoreByCourseClass(courseClassSelected.id)
       )
-      setScores(response.data)
+      setScores(response.data.result)
     } catch (error) {
       console.error(error)
     }

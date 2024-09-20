@@ -34,12 +34,12 @@ const SearchResult = () => {
         const res = await authApis.get(
           `${endpoints['searchEducationProgram']}?kw=${kw}&page=${currentPage}${creditFilterParam}${yearFilterParam}`
         )
-        setCourseOutlines(res.data[0].data)
-        setEducationPrograms(res.data[1].data)
+        setCourseOutlines(res.data.result[0].data)
+        setEducationPrograms(res.data.result[1].data)
         setTotal(
-          res.data[0].total > res.data[1].total
-            ? res.data[0].total
-            : res.data[1].total
+          res.data.result[0].total > res.data.result[1].total
+            ? res.data.result[0].total
+            : res.data.result[1].total
         )
       } catch (e) {
         console.error(e)

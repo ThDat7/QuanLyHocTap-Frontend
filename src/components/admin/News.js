@@ -36,7 +36,7 @@ const NewsEdit = () => {
       if (isCreate) return
       try {
         const res = await authApis.get(endpoints['news'](id))
-        setNews(res.data)
+        setNews(res.data.result)
       } catch (e) {
         console.error(e)
       }
@@ -45,7 +45,7 @@ const NewsEdit = () => {
     const fetchStaffs = async () => {
       try {
         const res = await authApis.get(endpoints['staffSelectOption'])
-        setStaffs(res.data)
+        setStaffs(res.data.result)
       } catch (e) {
         console.error(e)
       }

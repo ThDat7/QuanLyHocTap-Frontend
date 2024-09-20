@@ -35,7 +35,7 @@ const CourseEdit = () => {
 
       try {
         const res = await authApis.get(endpoints['course'](id))
-        setCourse(res.data)
+        setCourse(res.data.result)
       } catch (e) {
         console.error(e)
       }
@@ -44,7 +44,7 @@ const CourseEdit = () => {
     const fetchCourseTypes = async () => {
       try {
         const res = await authApis.get(endpoints['courseTypes'])
-        setCourseTypes(res.data)
+        setCourseTypes(res.data.result)
       } catch (e) {
         console.error(e)
       }

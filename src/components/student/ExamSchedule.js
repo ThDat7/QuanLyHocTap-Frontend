@@ -12,8 +12,8 @@ const ExamSchedule = () => {
     const fetchSemesters = async () => {
       try {
         const response = await authApis.get(endpoints.studentAllSemester)
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -34,7 +34,7 @@ const ExamSchedule = () => {
       const response = await authApis.get(
         endpoints.examScheduleBySemester(semesterSelected.id)
       )
-      setExamSchedules(response.data)
+      setExamSchedules(response.data.result)
     } catch (error) {
       console.error(error)
     }

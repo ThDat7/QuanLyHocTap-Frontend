@@ -38,7 +38,7 @@ const MajorEdit = () => {
 
       try {
         const res = await authApis.get(endpoints['major'](id))
-        setMajor(res.data)
+        setMajor(res.data.result)
       } catch (e) {
         console.error(e)
       }
@@ -47,7 +47,7 @@ const MajorEdit = () => {
     const fetchFaculties = async () => {
       try {
         const res = await authApis.get(endpoints.facultiesSelectOptions)
-        setFaculties(res.data)
+        setFaculties(res.data.result)
       } catch (e) {
         console.error(e)
       }

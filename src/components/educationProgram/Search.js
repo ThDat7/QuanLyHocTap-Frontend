@@ -24,8 +24,8 @@ const Search = () => {
         const res = await authApis.get(
           `${endpoints['searchEducationProgram']}?kw=${kw}`
         )
-        setCourseOutlineSuggestions(res.data[0].data)
-        setEducationProgramSuggestion(res.data[1].data)
+        setCourseOutlineSuggestions(res.data.result[0].data)
+        setEducationProgramSuggestion(res.data.result[1].data)
       } catch (e) {
         console.error(e)
       }

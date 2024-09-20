@@ -16,8 +16,8 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
     const fetchAndSetSemesters = async () => {
       try {
         const response = await fetchSemesters()
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -38,7 +38,7 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
 
     try {
       const response = await fetchSchedules(semesterSelected.id)
-      setCourseClassSchedules(response.data)
+      setCourseClassSchedules(response.data.result)
     } catch (error) {
       console.error(error)
     }

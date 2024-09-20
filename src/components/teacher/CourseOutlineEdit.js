@@ -16,7 +16,7 @@ const CourseOutlineEdit = () => {
         const res = await authApis.get(
           endpoints['teacherCourseOutlineView'](id)
         )
-        setcourseOutline(res.data)
+        setcourseOutline(res.data.result)
       } catch (e) {
         console.error(e)
       }

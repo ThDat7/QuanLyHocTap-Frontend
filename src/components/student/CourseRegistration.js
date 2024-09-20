@@ -12,7 +12,7 @@ const CourseRegistration = () => {
       try {
         const url = endpoints.courseRegisterInfo
         const res = await authApis.get(url)
-        setData(res.data)
+        setData(res.data.result)
       } catch (error) {
         console.error(error)
       }
@@ -38,7 +38,7 @@ const CourseRegistration = () => {
     try {
       const url = endpoints.registerCourse(courseClass.id)
       const res = await authApis.post(url)
-      setData(res.data)
+      setData(res.data.result)
     } catch (error) {
       console.error(error)
     }
@@ -54,7 +54,7 @@ const CourseRegistration = () => {
     try {
       const url = endpoints.unRegisterCourse(courseClass.id)
       const res = await authApis.post(url)
-      setData(res.data)
+      setData(res.data.result)
     } catch (error) {
       console.error(error)
     }

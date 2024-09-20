@@ -24,7 +24,7 @@ const EducationProgram = () => {
       const res = await authApis.get(
         endpoints['cloneEducationProgram'](fromYear, toYear)
       )
-      const data = res.data
+      const data = res.data.result
       setMsg(`Clone thành công ${data.totalCloned} chương trình học`)
     } catch (e) {
       console.error(e)
@@ -81,7 +81,7 @@ const EducationProgramEdit = () => {
 
       try {
         const res = await authApis.get(endpoints['educationProgram'](id))
-        setEp(res.data)
+        setEp(res.data.result)
       } catch (e) {
         console.error(e)
       }
@@ -90,7 +90,7 @@ const EducationProgramEdit = () => {
     const fetchMajors = async () => {
       try {
         const res = await authApis.get(endpoints['majorsSelectOption'])
-        setMajors(res.data)
+        setMajors(res.data.result)
       } catch (e) {
         console.error(e)
       }
@@ -99,7 +99,7 @@ const EducationProgramEdit = () => {
     const fetchCourse = async () => {
       try {
         const res = await authApis.get(endpoints['coursesSelectOption'])
-        setCourses(res.data)
+        setCourses(res.data.result)
       } catch (e) {
         console.error(e)
       }

@@ -14,8 +14,8 @@ const TeacherExamSchedule = () => {
     const fetchSemesters = async () => {
       try {
         const response = await authApis.get(endpoints.semesterNoneLocked)
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -36,7 +36,7 @@ const TeacherExamSchedule = () => {
           examSelected.courseClassId
         )
         const response = await authApis.get(url)
-        setAvailableSchedules(response.data)
+        setAvailableSchedules(response.data.result)
       } catch (error) {
         console.error(error)
       }
@@ -54,7 +54,7 @@ const TeacherExamSchedule = () => {
       const response = await authApis.get(
         endpoints.teacherExamScheduleBySemester(semesterSelected.id)
       )
-      setExamSchedules(response.data)
+      setExamSchedules(response.data.result)
     } catch (error) {
       console.error(error)
     }

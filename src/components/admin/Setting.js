@@ -34,7 +34,7 @@ const SettingEdit = () => {
     const fetchSetting = async () => {
       try {
         const res = await authApis.get(endpoints['setting'](id))
-        setSetting(res.data)
+        setSetting(res.data.result)
       } catch (e) {
         console.error(e)
       }

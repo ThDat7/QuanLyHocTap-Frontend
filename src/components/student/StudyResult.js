@@ -10,7 +10,7 @@ const StudyResult = () => {
       try {
         const url = endpoints['studyResult']
         const response = await authApis.get(url)
-        setStudyResults(response.data)
+        setStudyResults(response.data.result)
       } catch (error) {
         console.error('Failed to fetch study results: ', error)
       }

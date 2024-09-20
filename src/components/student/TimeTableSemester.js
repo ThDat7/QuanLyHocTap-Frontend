@@ -12,8 +12,8 @@ const TimeTableSemester = () => {
     const fetchSemesters = async () => {
       try {
         const response = await authApis.get(endpoints.studentAllSemester)
-        setSemesters(response.data)
-        setSemesterSelected(response.data[0])
+        setSemesters(response.data.result)
+        setSemesterSelected(response.data.result[0])
       } catch (error) {
         console.error(error)
       }
@@ -33,7 +33,7 @@ const TimeTableSemester = () => {
       const response = await authApis.get(
         endpoints.studentTimetableBySemester(semesterSelected.id)
       )
-      setCourseClassSchedules(response.data)
+      setCourseClassSchedules(response.data.result)
     } catch (error) {
       console.error(error)
     }

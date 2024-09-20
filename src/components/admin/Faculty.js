@@ -35,7 +35,7 @@ const FacultyEdit = () => {
 
       try {
         const res = await authApis.get(endpoints['faculty'](id))
-        setFaculty(res.data)
+        setFaculty(res.data.result)
       } catch (e) {
         console.error(e)
       }

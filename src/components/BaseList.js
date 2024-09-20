@@ -40,7 +40,7 @@ const BaseList = ({
     try {
       const url = endpoint + `?page=${currentPage}`
       const response = await authApis.get(url)
-      const data = response.data
+      const data = response.data.result
       setTotal(data.total)
       setList(data.data)
     } catch (error) {

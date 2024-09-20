@@ -9,7 +9,7 @@ const StudentStatus = () => {
       try {
         const url = endpoints.currentStudentStatus
         const response = await authApis.get(url)
-        setStudentStatues(response.data)
+        setStudentStatues(response.data.result)
       } catch (error) {
         console.log(error)
       }

@@ -14,7 +14,7 @@ const News = () => {
       try {
         const url = endpoints.allNews
         const response = await Apis.get(url)
-        const data = response.data
+        const data = response.data.result
         setNews(data.data)
       } catch (error) {
         console.error(error)
@@ -62,7 +62,7 @@ const NewsView = () => {
       try {
         const url = endpoints.newsView(id)
         const response = await Apis.get(url)
-        setNews(response.data)
+        setNews(response.data.result)
       } catch (error) {
         console.error(error)
       }

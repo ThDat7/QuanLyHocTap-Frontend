@@ -73,6 +73,16 @@ export const endpoints = {
 
   allSemester: '/api/semesters',
 
+  finalExamBySemesterAndCourse: (semesterId, courseId) =>
+    `/api/exam-schedules/semester/${semesterId}/course/${courseId}/final-exam`,
+  adminAvailableTimeFinalExam: (courseClassId) =>
+    `/api/exam-schedules/course-class/${courseClassId}/available-time-final-exam`,
+  adminAvailableRoomFinalExam: (courseClassId) =>
+    `/api/exam-schedules/course-class/${courseClassId}/available-room-final-exam`,
+  adminUpdateFinalExam: (courseClassId) =>
+    `/api/exam-schedules/course-class/${courseClassId}/final-exam`,
+  courseWithFinalExamStatus: (semesterId) =>
+    `/api/exam-schedules/semester/${semesterId}/course-with-final-exam-schedule-status`,
   courseFromCourseClassBySemester: (semesterId) =>
     `/api/courses/semester/${semesterId}/from-course-class`,
   courseClassBySemesterAndCourse: (semesterId, courseId) =>

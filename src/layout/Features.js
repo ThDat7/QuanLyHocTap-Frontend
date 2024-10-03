@@ -30,6 +30,7 @@ const TeacherFeatures = () => {
 
 const AdminFeatures = () => {
   const features = [
+    { label: 'Lich thi', url: Urls['adminExamSchedule'] },
     { label: 'Diem cuoi ky', url: Urls['adminFinalScore'] },
     { label: 'Thông báo', url: Urls['adminNews'] },
     { label: 'Khoa', url: Urls['adminFaculty'] },

@@ -25,6 +25,7 @@ const Urls = {
   adminEducationProgram: '/admin/education-programs/',
   adminNews: '/admin/news/',
 
+  adminExamSchedule: '/admin/exam-schedules',
   adminFinalScore: '/admin/final-score',
 }
 

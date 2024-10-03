@@ -70,6 +70,16 @@ export const endpoints = {
   newses: '/api/news',
   news: (id) => `/api/news/${id}`,
   staffSelectOption: `/api/staffs/select-options`,
+
+  allSemester: '/api/semesters',
+
+  courseFromCourseClassBySemester: (semesterId) =>
+    `/api/courses/semester/${semesterId}/from-course-class`,
+  courseClassBySemesterAndCourse: (semesterId, courseId) =>
+    `/api/course-classes/semester/${semesterId}/course/${courseId}`,
+  finalScoresByCourseClass: (courseClassId) =>
+    `/api/scores/course-class/${courseClassId}/final-exam`,
+  updateFinalScores: '/api/scores/update/final-exam',
 }
 
 export default axios.create({

@@ -6,19 +6,21 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   const navLinks = [
     { label: 'Trang chủ', url: '#home' },
+    { label: 'Thông tin', url: '#info' },
     { label: 'Chương trình đào tạo', url: Urls['searchEducationProgram'] },
   ]
 
   return (
     <Navbar bg='primary' variant='dark' className='mb-3'>
       <Navbar.Brand>
-        <Link to={Urls.home}>
+        <Link className='text-white' to={Urls.home}>
           <img
             alt=''
-            src='logo.png'
-            width='30'
-            height='30'
+            src='/logo-removebg-preview.png'
+            width='45'
+            height='45'
             className='d-inline-block align-top'
+            style={{ filter: 'invert(2)' }}
           />{' '}
           Trường Đại Học Mở TP. Hồ Chí Minh
         </Link>

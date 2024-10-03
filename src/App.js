@@ -23,6 +23,7 @@ import Score from './components/teacher/Score'
 import CourseOutlines from './components/teacher/CourseOutline'
 import CourseOutlineEdit from './components/teacher/CourseOutlineEdit'
 import Major, { MajorEdit } from './components/admin/Major'
+import FinalScore from './components/admin/Score'
 import Course, { CourseEdit } from './components/admin/Course'
 import Faculty, { FacultyEdit } from './components/admin/Faculty'
 import Setting, { SettingEdit } from './components/admin/Setting'
@@ -141,6 +142,11 @@ const App = () => {
                 <Route
                   path={`${Urls['adminNews']}create`}
                   element={<NewsEdit />}
+                />
+
+                <Route
+                  path={`${Urls['adminFinalScore']}`}
+                  element={<FinalScore />}
                 />
               </Routes>
             </Col>

@@ -24,6 +24,8 @@ const Urls = {
   adminSetting: '/admin/settings/',
   adminEducationProgram: '/admin/education-programs/',
   adminNews: '/admin/news/',
+
+  adminFinalScore: '/admin/final-score',
 }
 
 export default Urls

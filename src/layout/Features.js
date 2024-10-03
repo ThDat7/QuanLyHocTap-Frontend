@@ -30,6 +30,7 @@ const TeacherFeatures = () => {
 
 const AdminFeatures = () => {
   const features = [
+    { label: 'Diem cuoi ky', url: Urls['adminFinalScore'] },
     { label: 'Thông báo', url: Urls['adminNews'] },
     { label: 'Khoa', url: Urls['adminFaculty'] },
     { label: 'Ngành', url: Urls['adminMajor'] },
@@ -51,7 +52,7 @@ const Features = ({ features }) => {
         {features.map((feature, index) => (
           <ListGroup.Item key={index}>
             <Link to={feature.url} className='nav-link'>
-              {feature.label}
+              <div className='text-primary'>{feature.label}</div>
             </Link>
           </ListGroup.Item>
         ))}

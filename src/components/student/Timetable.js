@@ -1,7 +1,7 @@
 import React from 'react'
 import './Timetable.css'
 import { authApis, endpoints } from '../../configs/Apis'
-import TimeTable from '../TimeTable'
+import {TimeTableByWeek} from '../TimeTable'
 
 const StudentTimetable = () => {
   const fetchSemesters = async () => {
@@ -13,7 +13,7 @@ const StudentTimetable = () => {
   }
 
   return (
-    <TimeTable
+    <TimeTableByWeek
       fetchSemesters={fetchSemesters}
       fetchSchedules={fetchSchedules}
     />

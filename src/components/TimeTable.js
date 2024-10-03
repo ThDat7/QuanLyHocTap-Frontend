@@ -3,14 +3,10 @@ import './Timetable.css'
 import moment from 'moment'
 import { Form } from 'react-bootstrap'
 
-const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
+const TimeTableByWeek = ({ fetchSemesters, fetchSchedules }) => {
   const [semesters, setSemesters] = useState()
   const [semesterSelected, setSemesterSelected] = useState()
-  const [weekSelected, setWeekSelected] = useState()
   const [courseClassSchedules, setCourseClassSchedules] = useState([])
-
-  let weeks = []
-  let schedules = []
 
   useEffect(() => {
     const fetchAndSetSemesters = async () => {
@@ -28,13 +24,10 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
   }, [])
   useEffect(() => {
     fetchAndSetSchedules()
-  }, [semesterSelected, weekSelected])
-  useEffect(() => {
-    setWeekSelected(1)
   }, [semesterSelected])
 
   const fetchAndSetSchedules = async () => {
-    if (!semesters || !weekSelected) return
+    if (!semesters) return
 
     try {
       const response = await fetchSchedules(semesterSelected.id)
@@ -43,6 +36,76 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
       console.error(error)
     }
   }
+
+  const handleChangeSemesterFilter = (e) => {
+    const idSelected = parseInt(e.target.value)
+    const semester = semesters.filter((s) => s.id === idSelected)
+    if (semester.length > 0) setSemesterSelected(semester[0])
+  }
+
+  return (
+    <div className='timetable-container'>
+      <div className='timetable-header'>
+        <h5>THỜI KHÓA BIỂU TUẦN</h5>
+        <div>
+          <Form.Select className='' onChange={handleChangeSemesterFilter}>
+            {semesters &&
+              semesters.map((s, i) => (
+                <option key={i} value={s.id}>
+                  Học kỳ {s.semester} Năm học {s.year}
+                </option>
+              ))}
+          </Form.Select>
+        </div>
+        <button className='btn btn-primary'>In</button>
+      </div>
+      <TimeTable
+        courseClassSchedules={courseClassSchedules}
+        semesterSelected={semesterSelected}
+      />
+    </div>
+  )
+}
+
+function getTimeShift(shift) {
+  const startTime = { hours: 7, minutes: 0 }
+  const date = new Date(0, 0, 0, startTime.hours, startTime.minutes)
+  const minutesPerShift = 45
+  const restTime = 5
+  const minutes = shift * (minutesPerShift + restTime)
+  date.setMinutes(date.getMinutes() + minutes)
+  const newHours = date.getHours().toString().padStart(2, '0')
+  const newMinutes = date.getMinutes().toString().padStart(2, '0')
+  return `${newHours}:${newMinutes}`
+}
+
+const ScheduleCard = ({ schedule }) => {
+  return (
+    <td
+      rowSpan={schedule['duration']}
+      className={`timetable-item ${
+        schedule.type === 'CLASS_ROOM' ? 'theory' : 'practice'
+      }`}
+      style={{
+        gridRow: `span ${schedule.duration}`,
+      }}
+    >
+      <strong>{schedule.courseName}</strong>
+      <br />
+      <span>Nhóm: {schedule.studentClassName}</span>
+      <br />
+      <span>Phòng: {schedule.roomName}</span>
+      <br />
+      <span>GV: {schedule.teacherName}</span>
+    </td>
+  )
+}
+
+const TimeTable = ({ semesterSelected, courseClassSchedules }) => {
+  const [weekSelected, setWeekSelected] = useState(1)
+
+  let weeks = []
+  let schedules = []
 
   const calculateWeeks = () => {
     if (!semesterSelected) return
@@ -131,40 +194,19 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
     },
   ]
 
-  const handleChangeSemesterFilter = (e) => {
-    const idSelected = parseInt(e.target.value)
-    const semester = semesters.filter((s) => s.id === idSelected)
-    if (semester.length > 0) setSemesterSelected(semester[0])
-  }
-
   return (
-    <div className='timetable-container'>
-      <div className='timetable-header'>
-        <h5>THỜI KHÓA BIỂU TUẦN</h5>
-        <div>
-          <Form.Select className='' onChange={handleChangeSemesterFilter}>
-            {semesters &&
-              semesters.map((s, i) => (
-                <option key={i} value={s.id}>
-                  Học kỳ {s.semester} Năm học {s.year}
-                </option>
-              ))}
-          </Form.Select>
-
-          <Form.Select
-            className=''
-            onChange={(e) => setWeekSelected(e.target.value)}
-          >
-            {weeks &&
-              weeks.map((e, i) => (
-                <option key={i} value={i}>
-                  Tuần {i + 1} [từ ngày {e.startDate} đến ngày {e.endDate}]
-                </option>
-              ))}
-          </Form.Select>
-        </div>
-        <button className='btn btn-primary'>In</button>
-      </div>
+    <>
+      <Form.Select
+        className=''
+        onChange={(e) => setWeekSelected(e.target.value)}
+      >
+        {weeks &&
+          weeks.map((e, i) => (
+            <option key={i} value={i}>
+              Tuần {i + 1} [từ ngày {e.startDate} đến ngày {e.endDate}]
+            </option>
+          ))}
+      </Form.Select>
       <div className='timetable-table'>
         <table>
           <thead>
@@ -214,47 +256,13 @@ const TimeTable = ({ fetchSemesters, fetchSchedules }) => {
             ))}
           </tbody>
         </table>
+        <div className='timetable-navigation'>
+          <button className='btn'>Trước</button>
+          <button className='btn'>Sau</button>
+        </div>
       </div>
-      <div className='timetable-navigation'>
-        <button className='btn'>Trước</button>
-        <button className='btn'>Sau</button>
-      </div>
-    </div>
+    </>
   )
 }
 
-function getTimeShift(shift) {
-  const startTime = { hours: 7, minutes: 0 }
-  const date = new Date(0, 0, 0, startTime.hours, startTime.minutes)
-  const minutesPerShift = 45
-  const restTime = 5
-  const minutes = shift * (minutesPerShift + restTime)
-  date.setMinutes(date.getMinutes() + minutes)
-  const newHours = date.getHours().toString().padStart(2, '0')
-  const newMinutes = date.getMinutes().toString().padStart(2, '0')
-  return `${newHours}:${newMinutes}`
-}
-
-const ScheduleCard = ({ schedule }) => {
-  return (
-    <td
-      rowSpan={schedule['duration']}
-      className={`timetable-item ${
-        schedule.type === 'CLASS_ROOM' ? 'theory' : 'practice'
-      }`}
-      style={{
-        gridRow: `span ${schedule.duration}`,
-      }}
-    >
-      <strong>{schedule.courseName}</strong>
-      <br />
-      <span>Nhóm: {schedule.studentClassName}</span>
-      <br />
-      <span>Phòng: {schedule.roomName}</span>
-      <br />
-      <span>GV: {schedule.teacherName}</span>
-    </td>
-  )
-}
-
-export default TimeTable
+export { TimeTableByWeek, TimeTable }

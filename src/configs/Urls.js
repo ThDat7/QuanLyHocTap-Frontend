@@ -33,6 +33,8 @@ const Urls = {
     '/admin/course-registrations/semester/:semesterId/course/:courseId',
   adminCourseClass: '/admin/course-classes',
   adminCourseClassDetail: '/admin/course-classes/:id',
+
+  adminTimeTable: '/admin/timetables',
 }
 
 export default Urls

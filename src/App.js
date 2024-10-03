@@ -36,6 +36,7 @@ import { default as AdminNews } from './components/admin/News'
 import AdminCourseRegistration from './components/admin/CourseRegistration'
 import AdminCourseRegistrationDetail from './components/admin/CourseRegistrationDetail'
 import { CourseClassEdit } from './components/admin/CourseClass'
+import AdminTimeTable from './components/admin/TimeTable'
 
 const App = () => {
   return (
@@ -168,6 +169,11 @@ const App = () => {
                 <Route
                   path={`${Urls['adminCourseClassDetail']}`}
                   element={<CourseClassEdit />}
+                />
+
+                <Route
+                  path={`${Urls['adminTimeTable']}`}
+                  element={<AdminTimeTable />}
                 />
               </Routes>
             </Col>

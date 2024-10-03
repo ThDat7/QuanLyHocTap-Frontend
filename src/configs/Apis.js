@@ -101,6 +101,19 @@ export const endpoints = {
     `/api/course-classes/course/${courseId}/semester/${semesterId}/select-options-available-teacher`,
   courseClassStudentClassSelectOptions: (courseId, semesterId) =>
     `/api/course-classes/course/${courseId}/semester/${semesterId}/select-options-available-student-class`,
+
+  studentClassesWithStatus: (semesterId) =>
+    `/api/timetables/semester/${semesterId}/student-classes-with-status`,
+  courseClassWithStatus: (semesterId, studentClassId) =>
+    `/api/timetables/semester/${semesterId}/student-class/${studentClassId}/course-classes-with-status`,
+  adminTimeTableBySemesterAndStudentClass: (semesterId, studentClassId) =>
+    `/api/timetables/semester/${semesterId}/student-class/${studentClassId}/schedules`,
+  adminAvailableRoomTimeTables: (courseClassId) =>
+    `/api/timetables/course-class/${courseClassId}/available-classrooms`,
+  adminUpdateTimeTable: (courseClassId) =>
+    `/api/timetables/course-class/${courseClassId}`,
+  adminDeleteScheduleStudy: (scheduleId) =>
+    `/api/timetables/schedule-study/${scheduleId}`,
 }
 
 export default axios.create({

@@ -27,6 +27,12 @@ const Urls = {
 
   adminExamSchedule: '/admin/exam-schedules',
   adminFinalScore: '/admin/final-score',
+
+  adminCourseRegistration: '/admin/course-registrations',
+  adminCourseRegistrationDetail:
+    '/admin/course-registrations/semester/:semesterId/course/:courseId',
+  adminCourseClass: '/admin/course-classes',
+  adminCourseClassDetail: '/admin/course-classes/:id',
 }
 
 export default Urls

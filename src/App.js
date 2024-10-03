@@ -33,6 +33,9 @@ import EducationProgram, {
 } from './components/admin/EducationProgram'
 import { NewsEdit } from './components/admin/News'
 import { default as AdminNews } from './components/admin/News'
+import AdminCourseRegistration from './components/admin/CourseRegistration'
+import AdminCourseRegistrationDetail from './components/admin/CourseRegistrationDetail'
+import { CourseClassEdit } from './components/admin/CourseClass'
 
 const App = () => {
   return (
@@ -152,6 +155,19 @@ const App = () => {
                 <Route
                   path={`${Urls['adminFinalScore']}`}
                   element={<FinalScore />}
+                />
+
+                <Route
+                  path={`${Urls['adminCourseRegistration']}`}
+                  element={<AdminCourseRegistration />}
+                />
+                <Route
+                  path={`${Urls['adminCourseRegistrationDetail']}`}
+                  element={<AdminCourseRegistrationDetail />}
+                />
+                <Route
+                  path={`${Urls['adminCourseClassDetail']}`}
+                  element={<CourseClassEdit />}
                 />
               </Routes>
             </Col>

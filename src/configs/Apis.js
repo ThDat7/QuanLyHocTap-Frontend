@@ -90,6 +90,17 @@ export const endpoints = {
   finalScoresByCourseClass: (courseClassId) =>
     `/api/scores/course-class/${courseClassId}/final-exam`,
   updateFinalScores: '/api/scores/update/final-exam',
+
+  courseForRegistration: (semesterId) =>
+    `/api/course-classes/semester/${semesterId}/course-with-courseclass-count`,
+
+  courseClasses: '/api/course-classes',
+  courseClass: (id) => `/api/course-classes/${id}`,
+  semestersSelectOptions: '/api/semesters/select-options',
+  courseClassTeacherSelectOptions: (courseId, semesterId) =>
+    `/api/course-classes/course/${courseId}/semester/${semesterId}/select-options-available-teacher`,
+  courseClassStudentClassSelectOptions: (courseId, semesterId) =>
+    `/api/course-classes/course/${courseId}/semester/${semesterId}/select-options-available-student-class`,
 }
 
 export default axios.create({

@@ -20,7 +20,7 @@ const FormInput = ({ field, value, handleChange }) => {
       <label htmlFor={field.name}>{field.label}</label>
       <Form.Control
         {...field.inputProps}
-        id={field.fienameld}
+        id={field.name}
         value={value}
         onChange={(e) => handleChange(e, field.name)}
       />
@@ -37,6 +37,7 @@ const FormSelect = ({ field, value, values, handleChange }) => {
         value={value}
         onChange={(e) => handleChange(e, field.name)}
       >
+        <option />
         {values.map((item, index) => (
           <option key={index} value={item.value}>
             {item.label}
